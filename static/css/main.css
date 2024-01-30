@@ -1,7 +1,10 @@
-body, html {
+html {
+    background-image: linear-gradient(90deg, #3E5151, #DECBA4);
+}
+
+body {
     margin: 0;
     font-family: sans-serif;
-    background-color: lightblue;
 }
 
 .content {
@@ -10,11 +13,12 @@ body, html {
 }
 
 table, td, th {
-    border: 1px solid #aaa;
+    background-color: #ffffff;
+    border-radius: 20px;
+    border-collapse: collapse;
 }
 
 table {
-    border-collapse: collapse;
     width: 100%;
 }
 
@@ -33,4 +37,20 @@ td {
 
 #content {
     width: 70%;
+}
+
+a:link, a:visited {
+    color: black;
+    text-decoration: none;
+}
+
+.editable {
+    cursor: pointer;
+}
+
+.editable input {
+    border: none;
+    background-color: transparent;
+    width: 100%;
+    text-align: center;
 }
