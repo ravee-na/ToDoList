@@ -66,7 +66,7 @@ def update(id):
             return 'There was a problem updating the task'
 
     else:
-        return render_template('update.html', task=task)
+        return render_template('index.html', task=task)
 
 
 # if there are any errors, show on webpage

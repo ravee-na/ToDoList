@@ -20,10 +20,15 @@ table, td, th {
 
 table {
     width: 100%;
+    margin-bottom: 100px;
 }
 
 th {
     height: 30px;
+    text-align: left;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 td {
@@ -36,7 +41,8 @@ td {
 }
 
 #content {
-    width: 70%;
+    width: 170px;
+    border: 0;
 }
 
 a:link, a:visited {
@@ -53,4 +59,17 @@ a:link, a:visited {
     background-color: transparent;
     width: 100%;
     text-align: center;
+}
+
+#add {
+    width: 25%;
+    border-radius: 25px;
+    background-color:#f7e9bc;
+    font-family: "Lucida Console", "Courier New", monospace;
+    font-size: medium;
+    height: 35px;
+}
+
+#delete{
+    padding-right: 20px;
 }

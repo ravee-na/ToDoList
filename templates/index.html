@@ -10,28 +10,36 @@
     <h1 style="text-align: center;">To-Do List</h1>
     <table>
         <tr>
-            <th>Task</th>
-            <th>Added</th>
-            <th>Actions</th>
+            <th colspan="3">To-Do List</th>
+        </tr>
+        <tr>
+            <td>
+                <form action="/" method="POST">
+                    <input type="text" name="content" id="content">
+                    <input type="submit" value="Add" id="add">
+                </form>
+            </td>
         </tr>
         {% for task in tasks %}
             <tr>
                 <td>
-                    <a href="#" class="update-task" data-task-id="{{ task.id }}">{{ task.content }}</a>
+                    <form action="/update/{{ task.id }}" method="POST" onsubmit="updateTask(event)">
+                        <input type="text" name="content" id="content" value="{{ task.content }}" onchange="this.form.submit();">
+                    </form>
                 </td>
                 <td>{{ task.date_created.date() }}</td>
                 <td>
-                    <a href="/delete/{{task.id}}">x</a>
-                    <br>
-                    <a href="/update/{{task.id}}">Update</a>
+                    <a id="delete" href="/delete/{{task.id}}">x</a>
                 </td>
             </tr>
         {% endfor %}
     </table>
-    
-    <form action="/" method="POST">
-        <input type="text" name="content" id="content">
-        <input type="submit" value="Add Task">
-    </form>
 </div>
+
+<script>
+    function updateTask(event) {
+        event.preventDefault();
+        event.target.submit();
+    }
+</script>
 {% endblock %}
