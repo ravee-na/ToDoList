@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 
 {% block head %}
-<script src="https://kit.fontawesome.com/f2f86d248a.js" crossorigin="anonymous"></script>
 {% endblock %}
 
 
@@ -9,7 +8,8 @@
 
 <div class="container">
     <div class="todo-app">
-        <h2>To-Do List</h2>
+        <h2>To-Do List <img src="images/todo.png">
+        </h2>
         <div class="row">
             <form action="/" method="POST">
                 <input type="text" name="content" id="input-box" placeholder="Add your text">
@@ -21,14 +21,35 @@
             {% for task in tasks %}
                 <tr>
                     <td>
-                        <form action="/update/{{ task.id }}" method="POST" onsubmit="updateTask(event)">
-                            <input type="text" name="content" id="content" value="{{ task.content }}" onchange="this.form.submit();">
-                        </form>
+                        <div class="complete">
+                            {% if task.complete == 0 %}
+                                <a id="incomplete" href="/complete/{{task.id}}">
+                                    <img style="width: 20px;" src="images/unchecked.png">
+                                </a>
+                            {% else %}
+                                <a id="complete" href="/complete/{{task.id}}">
+                                    <img style="width: 20px;" src="images/checked.png">
+                                </a>
+                            {% endif %}
+                        </div>
                     </td>
                     <td>
-                        <a id="delete" href="/delete/{{task.id}}">
-                            <i class="fa-solid fa-trash"></i>
-                        </a>
+                        <div class="tasks">
+                            <form action="/update/{{ task.id }}" method="POST" onsubmit="updateTask(event)">
+                                {% if task.complete == 0 %}
+                                    <input type="text" name="content" id="content" value="{{ task.content }}" onchange="this.form.submit();">
+                                {% else %}
+                                    <input style="text-decoration: line-through;" type="text" name="content" id="content" value="{{ task.content }}" onchange="this.form.submit();">
+                                {% endif %}
+                            </form>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="delete">
+                            <a id="delete" href="/delete/{{task.id}}">
+                                <img src="images/xmark.png">
+                            </a>
+                        </div>
                     </td>
                 </tr>
             {% endfor %}
