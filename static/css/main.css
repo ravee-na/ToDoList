@@ -74,12 +74,13 @@ img {
 #content {
     border: 0;
     font-size: medium;
+    width: 390px;
 }
 
 .tasks {
     margin-bottom: 4px;
 }
 
-.delete {
-    margin-left: 190px;
+#content:focus {
+    outline: none;
 }
