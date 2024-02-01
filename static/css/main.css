@@ -1,26 +1,26 @@
+/*
 html {
     background-image: linear-gradient(90deg, #3E5151, #DECBA4);
 }
 
 body {
-    margin: 0;
     font-family: sans-serif;
 }
 
-.content {
-    margin: 0 auto;
-    width: 400px;
+.todo {
+    margin: auto;
+    width: 430px;
+    padding: 40px 30px 70px;
 }
 
 table, td, th {
-    background-color: #ffffff;
     border-radius: 20px;
     border-collapse: collapse;
 }
 
 table {
     width: 100%;
-    margin-bottom: 100px;
+    background-color: #ffffff;
 }
 
 th {
@@ -45,20 +45,18 @@ td {
     border: 0;
 }
 
+#addForm {
+    width: 150px;
+    border: 0;
+    border-radius: 30px;
+    background-color: #c4c3c3;
+    height: 35px;
+    padding: 5px 20px;
+}
+
 a:link, a:visited {
     color: black;
     text-decoration: none;
-}
-
-.editable {
-    cursor: pointer;
-}
-
-.editable input {
-    border: none;
-    background-color: transparent;
-    width: 100%;
-    text-align: center;
 }
 
 #add {
@@ -68,8 +66,84 @@ a:link, a:visited {
     font-family: "Lucida Console", "Courier New", monospace;
     font-size: medium;
     height: 35px;
+    border: 0;
+    padding: 5px 20px;
 }
 
 #delete{
     padding-right: 20px;
+    color: #848784;
+    font-size: 20px;
+}
+
+#addForm:focus {
+    outline: none;
+}
+*/
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(90deg, #3E5151, #DECBA4);
+    padding: 10px;
+}
+
+.todo-app{
+    width: 500px;
+    background: #fff;
+    margin: 100px auto;
+    padding: 40px 30px 70px;
+    border-radius: 10px;
+}
+
+.todo-app h2{
+    color: #002765;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.todo-app h2 img {
+    width: 30px;
+    margin-left: 10px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #edeef0;
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom: 25px;
+}
+
+#input-box {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+    font-weight: 14px;
+}
+
+#add {
+    border: none;
+    outline: none;
+    padding: 16px 50px;
+    background: #ff5945;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 40px;
+    margin-left: 105px;
 }
