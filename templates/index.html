@@ -39,7 +39,7 @@
                                 {% if task.complete == 0 %}
                                     <input type="text" name="content" id="content" value="{{ task.content }}" onchange="this.form.submit();">
                                 {% else %}
-                                    <input style="text-decoration: line-through;" type="text" name="content" id="content" value="{{ task.content }}" onchange="this.form.submit();">
+                                    <input style="text-decoration: line-through; color: #757474;" type="text" name="content" id="content" value="{{ task.content }}" onchange="this.form.submit();">
                                 {% endif %}
                             </form>
                         </div>
